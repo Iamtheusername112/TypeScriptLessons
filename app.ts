@@ -104,10 +104,12 @@ const person: {
   name: string;
   age: number;
   hobbies: string[];
+  role: [number, string]; //Tuple: this is a special type of array which takes only two params, a number and string and type script knows about it.
 } = {
   name: "Francis",
   age: 25,
   hobbies: ["sports", "cooking"],
+  role: [2, "author"],
 };
 
 for (const hobby of person.hobbies) {
@@ -118,3 +120,5 @@ console.log(person.age);
 console.log(person.name);
 
 // Note that we said string[] telling typescript that we are expecting array of strings/an array containing strings, this means that if we for instance pass in a number or say a boolean inside of the array, we will get an error because we have already told typeScript that we are going to load the array with only string, so to avoid that and let the array contain various data types, we say "any[]", that means we are telling type script that we wanna store any data type inside of this particular array.
+
+// Check Enum and unions
